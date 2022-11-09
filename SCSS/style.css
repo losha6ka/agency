@@ -1258,9 +1258,10 @@ body {
   align-items: center;
 }
 .swiper-slide__name img {
+  margin-bottom: 0.625rem;
   margin-right: 0.625rem;
-  width: 30px;
-  height: 30px;
+  width: calc(15px + 15 * ((100vw - 320px) / 1600));
+  height: calc(15px + 15 * ((100vw - 320px) / 1600));
 }
 .swiper-slide__stars {
   flex: 0 0 auto;

@@ -1359,9 +1359,10 @@ body.lock{
 		display: flex;
 		align-items: center;
 		& img{
+			margin-bottom: rem(10, );		
 			margin-right: rem(10, );
-			width: 30px;
-			height: 30px;
+			@include adaptiv-value("width", 30, 15, 0);
+			@include adaptiv-value("height", 30, 15, 0);
 		}
 	}
 
