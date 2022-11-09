@@ -127,17 +127,24 @@ body.lock{
 	width: 60px;
 	/* высота элемента */
 	height: 50px;
+	@media (max-width:900px) {
+		right: 10px;
+		@include adaptiv-value(height, 50, 30, 0);
+		@include adaptiv-value(width, 60, 30, 0);
+	}
 }
 
 .btn-up::before {
 	content: "";
 	width: 40px;
 	height: 40px;
-	@include adaptiv-value(height, 40, 20, 0);
-	@include adaptiv-value(width, 40, 20, 0);	
 	background: transparent no-repeat center center;
 	background-size: 100% 100%;
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/%3E%3C/svg%3E");
+	@media (max-width:900px) {
+		@include adaptiv-value(height, 40, 20, 0);
+		@include adaptiv-value(width, 40, 20, 0);
+	}
 }
 
 .btn-up_hide {
