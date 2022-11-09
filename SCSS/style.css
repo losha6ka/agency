@@ -67,12 +67,12 @@ body {
 }
 
 .btn-up {
-  transition: 0.3 linear;
+  transition: 0.3s linear;
   z-index: 222;
   /* фиксированное позиционирование */
   position: fixed;
   /* цвет фона */
-  background-color: #673ab7;
+  background-color: #6e4ef0;
   /* расстояние от правого края окна браузера */
   right: 20px;
   /* расстояние от нижнего края окна браузера */
@@ -110,7 +110,7 @@ body {
 
 @media (hover: hover) and (pointer: fine) {
   .btn-up:hover {
-    background-color: #512da8; /* цвет заднего фона при наведении */
+    background-color: #4b2fbb; /* цвет заднего фона при наведении */
   }
 }
 .header__container {
@@ -306,7 +306,7 @@ body {
 }
 @media (max-width: 600px) {
   .agensy {
-    border-radius: 0%;
+    border-radius: 0;
   }
 }
 
@@ -1035,8 +1035,9 @@ body {
 @media (max-width: 900px) {
   .comments {
     border-radius: 0;
-    padding-bottom: 3.125rem;
+    padding-bottom: 6.25rem;
     padding-top: 3.125rem;
+    height: auto;
   }
 }
 
@@ -1182,12 +1183,13 @@ body {
 }
 
 .swiper {
+  z-index: 5;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   width: 730px;
   height: 433px;
-  box-shadow: 0px 30px 70px 0px rgba(103, 48, 226, 0.5);
+  box-shadow: 0px 0px 62px 0px rgba(34, 60, 80, 0.6);
   position: relative;
   top: 10%;
   left: 0;
@@ -1196,7 +1198,7 @@ body {
 @media (max-width: 900px) {
   .swiper {
     width: calc(310px + 420 * ((100vw - 320px) / 1600));
-    min-height: calc(350px + 83 * ((100vw - 320px) / 1600));
+    height: calc(350px + 83 * ((100vw - 320px) / 1600));
   }
 }
 
@@ -1206,6 +1208,7 @@ body {
 }
 
 .swiper-slide {
+  position: relative;
   background: white;
   padding: 5rem;
   display: flex;
@@ -1219,6 +1222,18 @@ body {
     padding-top: calc(40px + 40 * ((100vw - 320px) / 1600));
   }
 }
+.swiper-slide::after {
+  content: "";
+  background: url(../img/bg/swipertochki.png) center center no-repeat;
+  background-size: contain;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  top: 5%;
+  left: 0%;
+  min-width: calc(150px + 84 * ((100vw - 320px) / 1600));
+  min-height: calc(100px + 68 * ((100vw - 320px) / 1600));
+}
 .swiper-slide__text {
   flex: 1 1 auto;
   font-family: Nexa;
@@ -1229,6 +1244,7 @@ body {
   color: #6a697f;
   text-align: center;
   margin-bottom: 3.125rem;
+  z-index: 55;
 }
 .swiper-slide__name {
   margin-bottom: 0.625rem;
@@ -1238,6 +1254,13 @@ body {
   font-weight: 700;
   color: #6427de;
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+.swiper-slide__name img {
+  margin-right: 0.625rem;
+  width: 30px;
+  height: 30px;
 }
 .swiper-slide__stars {
   flex: 0 0 auto;
